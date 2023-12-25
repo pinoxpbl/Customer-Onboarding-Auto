@@ -38,23 +38,34 @@ for i, name in enumerate(df["Company Name"]):
 
 #Inserindo Dados
     
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="customerName"]')))
     browser.find_element(By.XPATH, '//*[@id="customerName"]').send_keys(name)
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="customerID"]')))
     browser.find_element(By.XPATH, '//*[@id="customerID"]').send_keys(id)
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="primaryContact"]')))
     browser.find_element(By.XPATH, '//*[@id="primaryContact"]').send_keys(contact)  
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="street"]')))
     browser.find_element(By.XPATH, '//*[@id="street"]').send_keys(street)  
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="city"]')))
     browser.find_element(By.XPATH, '//*[@id="city"]').send_keys(city)  
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="state"]')))
     browser.find_element(By.XPATH, '//*[@id="state"]').send_keys(state)
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="zip"]')))
     browser.find_element(By.XPATH, '//*[@id="zip"]').send_keys(str(zip_code))
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="email"]')))
     browser.find_element(By.XPATH, '//*[@id="email"]').send_keys(email)
     if offers == "YES":
+        WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="activeDiscountYes"]')))
         browser.find_element(By.XPATH, '//*[@id="activeDiscountYes"]').click()
     else:
+        WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="activeDiscountNo"]')))
         browser.find_element(By.XPATH, '//*[@id="activeDiscountNo"]').click()
 
     if nda == "YES":
+        WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="NDA"]')))
         browser.find_element(By.XPATH, '//*[@id="NDA"]').click()
 
-
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="submit_button"]')))
     browser.find_element(By.XPATH, '//*[@id="submit_button"]').click()
 
 
